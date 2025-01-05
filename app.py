@@ -72,7 +72,7 @@ def home():
                     <button type="submit">Go</button>
                 </form>
                 <footer>
-                    <p>&copy; 2025 Proxy Site. Use responsibly.</p>
+                    <p>&copy; 2025 Proxy Site. Use responsibly. Developed by : Satya Suranjeet jena</p>
                 </footer>
             </div>
         </body>
