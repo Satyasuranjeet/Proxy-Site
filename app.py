@@ -82,15 +82,32 @@ def home():
 @app.route('/proxy')
 def proxy():
     url = request.args.get('url')
-    if not url.startswith("http"):
+    
+    # Ensure the URL starts with 'http://' or 'https://'
+    if not url.startswith(("http://", "https://")):
         url = "http://" + url
+    
     try:
-        resp = requests.get(url)
+        # Add headers to mimic a browser
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        }
+        resp = requests.get(url, headers=headers, stream=True)
+
+        # Exclude specific headers that Flask cannot handle
         excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection']
         headers = [(name, value) for (name, value) in resp.raw.headers.items() if name.lower() not in excluded_headers]
+
+        # Return the proxied response
         return Response(resp.content, resp.status_code, headers)
+
+    except requests.exceptions.RequestException as e:
+        # Catch specific request errors
+        return f"<p style='color:red;'>Error accessing the URL: {e}</p>", 500
+
     except Exception as e:
-        return f"<p style='color:red;'>Error: {e}</p>"
+        # Catch any unexpected errors
+        return f"<p style='color:red;'>An unexpected error occurred: {e}</p>", 500
 
 if __name__ == "__main__":
     app.run(debug=True)
