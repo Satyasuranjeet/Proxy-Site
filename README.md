@@ -69,7 +69,7 @@ proxy-site/
 
 ## Screenshots
 ### Home Page
-![Home Page](https://via.placeholder.com/800x400.png?text=Proxy+Site+Home)
+![Home Page](https://i.ibb.co/W5cKcN1/image.png)
 
 ### Proxy Page
 ![Proxy Page](https://via.placeholder.com/800x400.png?text=Accessing+a+Blocked+Website)
