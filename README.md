@@ -72,7 +72,7 @@ proxy-site/
 ![Home Page](https://i.ibb.co/W5cKcN1/image.png)
 
 ### Proxy Page
-![Proxy Page](https://via.placeholder.com/800x400.png?text=Accessing+a+Blocked+Website)
+![Proxy Page](https://i.ibb.co/JyFpr4k/Untitled-design-1.png)
 
 ## Disclaimer
 This project is intended for educational and ethical purposes only. Bypassing restrictions may violate local laws or terms of service. Use responsibly.
